@@ -3,8 +3,9 @@ Simple_form -> Making forms
 Devise -> User login
 OmniAuth -> To help with devise, possibly Facebook, Google+, Kongregate
 Gravatarify -> User avatars
+Carrierwave
 (Paperclip -> user uploaded attachments)
 Cancancan -> Moderation abilities
 Rails_admin -> behind-the-scenes admin panel
 (Forem -> forum help)
-(Kaminari -> pagination, with Forem)
+(Will_paginate -> pagination, with Forem)
