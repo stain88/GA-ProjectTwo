@@ -1,6 +1,25 @@
-Guest should be able to view and play games, view game comments, view forum posts, view users.
+Guest should be able to view games
+Guest should be able to play games
+Guest should be able to view game comments
+Guest should be able to view forum posts
+Guest should be able to view users
 
-User is as above, plus ability to upload games, add comment, add forum posts. Can edit own games, comments, forum posts (show revision history?). 
+User should be able to do everything guest can
+User should be able to upload games
+User should be able to add comments to games
+User should be able to add forum posts
+User should be able to edit his own games
+User should be able to edit his own comments
+User should be able to edit his own forum posts
+User should be able to rate games
 
-(Mod as above, can edit all games, comments, posts)
-(Admin as above, can turn user into mod)
+Moderator should be able to do everything guest can
+Moderator should be able to edit all games
+Moderator should be able to edit all comments
+Moderator should be able to edit all posts
+
+Admin should be able to do everything moderator can
+Admin should be able to turn user into moderator
+Admin should be able to delete games
+Admin should be able to delete comments
+Admin should be able to delete posts
