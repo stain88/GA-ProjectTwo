@@ -1,0 +1,6 @@
+Guest should be able to view and play games, view game comments, view forum posts, view users.
+
+User is as above, plus ability to upload games, add comment, add forum posts. Can edit own games, comments, forum posts (show revision history?). 
+
+(Mod as above, can edit all games, comments, posts)
+(Admin as above, can turn user into mod)
