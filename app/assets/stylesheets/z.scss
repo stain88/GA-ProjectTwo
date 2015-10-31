@@ -21,10 +21,16 @@ body::after {
   color: #ddd;
 }
 
-.btn-signup {
+.btn-custom {
   background-color: #4a0000;
   border-color: #4a0000;
   color: #ddd
+}
+
+.btn-custom:hover {
+  background-color: #750000;
+  border-color: #750000;
+  color: #eee;
 }
 
 // Navbar stylings //
