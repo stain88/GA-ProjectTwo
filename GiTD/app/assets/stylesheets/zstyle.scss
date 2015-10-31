@@ -17,6 +17,8 @@ body::after {
   height: 400px;
 }
 
+// Simple-form extra stylings //
+
 .hint {
   color: #ddd;
 }
@@ -53,7 +55,9 @@ $dropDown       : true;
   .navbar-brand {
     color: $colDefault;
     &:hover, &:focus { 
-      color: $colHighlight; }}
+      color: $colHighlight; 
+    }
+  }
   .navbar-text {
     color: $colDefault; }
   .navbar-nav {
@@ -61,7 +65,9 @@ $dropDown       : true;
       > a {
         color: $colDefault;
         &:hover,  &:focus {
-          color: $colHighlight; }}
+          color: $colHighlight; 
+        }
+      }
       @if $dropDown {
         > .dropdown-menu {
           background-color: $bgDefault;
@@ -69,39 +75,61 @@ $dropDown       : true;
             color: $colDefault;
             &:hover,  &:focus {
               color: $colHighlight;
-              background-color: $bgHighlight; }}
+              background-color: $bgHighlight; 
+            }
+          }
           .divider {
-            background-color: $bgHighlight;}}}
+            background-color: $bgHighlight;
+          }
+        }
+      }
     }
     > .active {
       > a, > a:hover, > a:focus {
         color: $colHighlight;
-        background-color: $bgHighlight; }}
+        background-color: $bgHighlight; 
+      }
+    }
     > .open {
       > a, > a:hover, > a:focus {
         color: $colHighlight;
-        background-color: $bgHighlight; }}}
+        background-color: $bgHighlight; 
+      }
+    }
+  }
   .navbar-toggle {
     border-color: $bgHighlight;
     &:hover, &:focus {
-      background-color: $bgHighlight; }
+      background-color: $bgHighlight; 
+    }
     .icon-bar {
-      background-color: $colDefault; }}
+      background-color: $colDefault; 
+    }
+  }
   .navbar-collapse,
   .navbar-form {
-    border-color: $colDefault; }
+    border-color: $colDefault; 
+  }
   .navbar-link {
     color: $colDefault;
     &:hover {
-      color: $colHighlight; }}}
+      color: $colHighlight; 
+    }
+  }
+}
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu {
     > li > a {
       color: $colDefault;
       &:hover, &:focus {
-        color: $colHighlight; }}
+        color: $colHighlight; 
+      }
+    }
     > .active {
       > a, > a:hover, > a:focus {
         color: $colHighlight;
-        background-color: $bgHighlight; }}}
+        background-color: $bgHighlight; 
+      }
+    }
+  }
 }
