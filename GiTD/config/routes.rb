@@ -5,6 +5,4 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :index]
 
-  match 'auth/:provider/callback' => 'authentications#create', via: [:get, :post]
-
 end

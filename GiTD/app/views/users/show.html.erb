@@ -1,1 +1,18 @@
-User profile page
+<div class="jumbotron jt-custom">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <%= @user.profile_pic.blank? ? (gravatar_tag @user.email, size: 200) : (image_tag @user.profile_pic, size: "200") %>
+      </div>
+      <div class="col-md-4">
+        <h3><%= @user.username %></h3>
+        <p>Age: <%= @user.age %></p>
+        <p>Gender: <%= @user.gender %></p>
+      </div>
+      <div class="col-md-4">
+        <h3>About me: </h3>
+        <small><%= @user.bio %></small>
+      </div>
+    </div>
+  </div>
+</div>

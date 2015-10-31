@@ -1,7 +1,7 @@
 body {
   position: relative;
   background: rgba(153,0, 0, 0.8);// url(image_path("concrete_seamless.png"));
-  color: #FFF;
+  color: #ddd;
 }
 
 body::after {
@@ -17,6 +17,9 @@ body::after {
   height: 400px;
 }
 
+.jt-custom {
+  background-color: transparent;
+}
 // Simple-form extra stylings //
 
 .hint {
