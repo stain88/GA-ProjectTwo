@@ -40,7 +40,7 @@ gem 'cancancan'
 gem 'rails_admin'
 gem 'omniauth-facebook'
 gem 'omniauth-gplus', '~> 2.0'
-
+gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
