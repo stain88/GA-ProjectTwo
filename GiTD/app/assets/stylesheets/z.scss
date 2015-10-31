@@ -11,7 +11,7 @@ body::after {
   z-index: -1;
 }
 
-.hp {
+.hp-jumb {
   background-image: url(image_path("gitd_logo.png"));
   background-size: cover;
   height: 400px;
@@ -19,6 +19,13 @@ body::after {
 
 .hint {
   color: #ddd;
+}
+
+.has-error {
+  background-color: #da3535;
+  .help-block {
+    color: #ddd;
+  }
 }
 
 .btn-custom {
