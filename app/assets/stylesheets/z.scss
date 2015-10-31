@@ -11,15 +11,17 @@ body::after {
   z-index: -1;
 }
 
-.edit-cont {
-  margin-top: -50px;
-}
-
 .hp {
   background-image: url(image_path("gitd_logo.png"));
   background-size: cover;
   height: 400px;
 }
+
+.hint {
+  color: #ddd;
+}
+
+// Navbar stylings //
 
 $bgDefault      : #660000;
 $bgHighlight    : #990000;
