@@ -1,3 +1,11 @@
 <div class="jumbotron hp-jumb jt-custom">
   
 </div>
+
+<div class="container">
+  <h1>Latest Jam: </h1>
+  <% @jam = Jam.order("title DESC").first %>
+  <h3>GiTD #<%= @jam.title %></h3>
+  <h5>Theme: <%= @jam.theme %></h5>
+  <h5>Mechanic: <%= @jam.mechanic %></h5>
+</div>
