@@ -3,9 +3,9 @@
 </div>
 
 <div class="container">
-  <h1>Latest Jam: </h1>
   <% @jam = Jam.order("title DESC").first %>
-  <h3>GiTD #<%= @jam.title %></h3>
-  <h5>Theme: <%= @jam.theme %></h5>
-  <h5>Mechanic: <%= @jam.mechanic %></h5>
+  <h1>Latest Jam: GiTD #<%= @jam.title %></h1>
+  <h4>Theme: <%= @jam.theme %></h4>
+  <h4>Mechanic: <%= @jam.mechanic %></h4>
+  <h5>Status: <%= @jam.status %></h5>
 </div>

@@ -72,6 +72,6 @@ class JamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def jam_params
-      params.require(:jam).permit(:title, :theme, :mechanic)
+      params.require(:jam).permit(:title, :theme, :mechanic, :status)
     end
 end
