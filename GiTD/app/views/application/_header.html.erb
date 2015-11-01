@@ -14,9 +14,15 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <% if current_user && current_user.admin? %>
+          <li><%= link_to "Jams", "#" %></li>
+        <% end %>
         <li><%= link_to "Forum", "#" %></li>
         <li><%= link_to "Games", "#" %></li>
-        <li><%= link_to "People", users_path %></li>
+        <li><%= link_to users_path do %>
+          People <%= "(#{request_count})" unless request_count==0 || !current_user %>
+          <% end %>
+        </li>
         <% if current_user %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.profile_pic.blank? ? (gravatar_tag current_user.email, size: 20) : (image_tag current_user.profile_pic, size: "20") %> <%= current_user.username %> <span class="caret"></span></a>
