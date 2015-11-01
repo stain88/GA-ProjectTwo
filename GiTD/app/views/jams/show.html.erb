@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @jam.title %>
+</p>
+
+<p>
+  <strong>Theme:</strong>
+  <%= @jam.theme %>
+</p>
+
+<p>
+  <strong>Mechanic:</strong>
+  <%= @jam.mechanic %>
+</p>
+
+<%= link_to 'Edit', edit_jam_path(@jam) %> |
+<%= link_to 'Back', jams_path %>
