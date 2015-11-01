@@ -3,10 +3,14 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-    can :read, :all
+    # can :read, :all
+    p user.admin
     if user.admin?
         can :access, :rails_admin
         can :dashboard
+        can :manage, Jam
+    else
+        can :read, :all
     end
     # Define abilities for the passed in user here. For example:
     #

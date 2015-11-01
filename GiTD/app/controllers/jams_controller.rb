@@ -16,10 +16,12 @@ class JamsController < ApplicationController
   # GET /jams/new
   def new
     @jam = Jam.new
+    authorize! :create, @jam
   end
 
   # GET /jams/1/edit
   def edit
+    authorize! :edit, @jam
   end
 
   # POST /jams
