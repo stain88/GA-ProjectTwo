@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :games
   resources :jams
   # This line mounts Forem's routes at /forums by default.
   # This means, any requests to the /forums URL of your application will go to Forem::ForumsController#index.
