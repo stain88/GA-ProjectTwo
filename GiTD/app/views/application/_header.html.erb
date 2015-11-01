@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Jams", main_app.jams_path %></li>
         <li><%= link_to "Forum", main_app.forem_path %></li>
-        <li><%= link_to "Games", "#" %></li>
+        <li><%= link_to "Games", main_app.games_path %></li>
         <li><%= link_to main_app.users_path do %>
           People <%= "(#{request_count})" unless request_count==0 || !current_user %>
           <% end %>

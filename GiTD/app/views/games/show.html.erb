@@ -26,13 +26,13 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @game.user %>
+  <strong>Owner:</strong>
+  <%= @game.user.username %>
 </p>
 
 <p>
   <strong>Jam:</strong>
-  <%= @game.jam %>
+  <%= @game.jam.title %>
 </p>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
