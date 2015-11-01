@@ -1,6 +1,18 @@
-<h1>Editing Jam</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <h1>Editing Jam</h1>
 
-<%= render 'form' %>
+      <%= render 'form' %>
 
-<%= link_to 'Show', @jam %> |
-<%= link_to 'Back', jams_path %>
+      <%= link_to @jam do %>
+        <button class="btn btn-custom">Show</button>
+      <% end %>
+      <%= link_to jams_path do %>
+        <button class="btn btn-custom">Back</button>
+      <% end %>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
