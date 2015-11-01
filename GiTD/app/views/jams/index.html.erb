@@ -1,5 +1,5 @@
 <h1>Previous Jams
-<% if current_user.try(:admin?) %>
+<% if current_user.try(:admin?) || current_user.try(:moderator?) %>
   <%= link_to new_jam_path do %>
     <button class="btn btn-primary">New Jam</button>
   <% end %>

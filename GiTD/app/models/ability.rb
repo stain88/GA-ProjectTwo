@@ -8,6 +8,8 @@ class Ability
     if user.admin?
         can :access, :rails_admin
         can :dashboard
+        can :manage, :all
+    elsif user.moderator?
         can :manage, Jam
     else
         can :read, :all
