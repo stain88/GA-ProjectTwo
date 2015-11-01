@@ -1,7 +1,7 @@
 class CreateJams < ActiveRecord::Migration
   def change
     create_table :jams do |t|
-      t.int :title
+      t.integer :title
       t.string :theme
       t.string :mechanic
 
