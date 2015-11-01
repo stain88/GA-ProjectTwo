@@ -1,16 +1,16 @@
 <%= simple_form_for(@game) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :height %>
-    <%= f.input :width %>
-    <%= f.input :url %>
-    <%= f.association :jam %>
+  <div class="form-group">
+    <%= f.input :title, autofocus: true, required: true, label: false, placeholder: "Title", input_html: {class: "form-conrol"} %>
+    <%= f.input :description, label: false, placeholder: "Description", input_html: {class: "form-conrol"} %>
+    <%= f.input :height, label: false, placeholder: "Height", input_html: {class: "form-conrol"} %>
+    <%= f.input :width, label: false, placeholder: "Width", input_html: {class: "form-conrol"} %>
+    <%= f.input :url, label: false, placeholder: "URL", input_html: {class: "form-conrol"} %>
+    <%= f.association :jam, label: false, prompt: "Which Jam was this for?", input_html: {class: "form-conrol"} %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <%= f.button :submit, class: "btn btn-custom btn-block" %>
   </div>
 <% end %>
