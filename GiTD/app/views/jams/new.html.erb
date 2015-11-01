@@ -6,7 +6,9 @@
 
       <%= render 'form' %>
 
-      <%= link_to 'Back', jams_path %>
+      <%= link_to jams_path do %>
+        <button class="btn btn-custom">Back</button>
+      <% end %>
     </div>
     <div class="col-md-4"></div>
   </div> 

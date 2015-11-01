@@ -1,19 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="jumbotron jt-custom">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>GiTD #<%= @jam.title %></h1>
+      </div>
+      <div class="col-md-4 text-center">
+        <h2><%= @jam.theme %></h2>
 
-<p>
-  <strong>Title:</strong>
-  <%= @jam.title %>
-</p>
+        <h2><%= @jam.mechanic %></h2>
+      </div>
+      <div class="col-md-4">
+        <%= link_to main_app.jams_path do %>
+          <button class="btn btn-info btn-block">Back</button>
+        <% end %>
+        <% if current_user.try(:admin?) %>
+          <%= link_to main_app.edit_jam_path(@jam) do %>
+            <button class="btn btn-warning btn-block">Edit</button>
+          <% end %>
+          <%= link_to main_app.jam_path, method: :delete do %>
+            <button class="btn btn-danger btn-block">Delete</button>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Theme:</strong>
-  <%= @jam.theme %>
-</p>
-
-<p>
-  <strong>Mechanic:</strong>
-  <%= @jam.mechanic %>
-</p>
-
-<%= link_to 'Edit', edit_jam_path(@jam) %> |
-<%= link_to 'Back', jams_path %>
+<div class="container">
+  <h1>Entries: </h1> 
+</div>

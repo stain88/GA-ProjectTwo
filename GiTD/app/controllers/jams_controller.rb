@@ -5,7 +5,7 @@ class JamsController < ApplicationController
   # GET /jams
   # GET /jams.json
   def index
-    @jams = Jam.all
+    @jams = Jam.order(title: :desc)
   end
 
   # GET /jams/1
