@@ -16,3 +16,21 @@
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">Friends (<%= @user.active_friends.size %>)</div>
+        <div class="panel-body">
+          <% @user.active_friends.last(16).each do |user| %>
+            <%= link_to user_path(user.username) do %>
+              <%= @user.profile_pic.blank? ? (gravatar_tag @user.email, size: 40) : (image_tag @user.profile_pic, size: "40") %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9"></div>
+  </div>
+</div>

@@ -51,4 +51,8 @@ class User < ActiveRecord::Base
   def forem_name
     username
   end
+
+  def get_pic area
+    self.profile_pic.blank? ? (gravatar_tag self.email, size: area) : (image_tag self.profile_pic, size: area.to_str)
+  end
 end

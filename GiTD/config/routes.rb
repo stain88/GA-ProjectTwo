@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  root 'pages#home'
   resources :games
   resources :jams
   # This line mounts Forem's routes at /forums by default.
@@ -11,7 +11,6 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: {registrations: "registrations"}
-  root 'pages#home'
 
   resources :users, only: [:show, :index]
   resources :friendships, only: [:create, :destroy, :accept] do
@@ -19,5 +18,4 @@ Rails.application.routes.draw do
       put :accept
     end
   end
-
 end
