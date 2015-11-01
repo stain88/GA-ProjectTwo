@@ -1,0 +1,9 @@
+<div class="col-md-4 text-center">
+  <%= link_to jam_path(jam.id) do %>
+    <div class="thumbnail tn-custom">
+      <h1><%= jam.title %></h1>
+      <h3><%= jam.theme %></h3>
+      <h3><%= jam.mechanic %></h3>    
+    </div>
+  <% end %>
+</div>

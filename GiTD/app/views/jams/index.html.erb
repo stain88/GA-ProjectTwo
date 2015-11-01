@@ -1,31 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Jams</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Theme</th>
-      <th>Mechanic</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @jams.each do |jam| %>
-      <tr>
-        <td><%= jam.title %></td>
-        <td><%= jam.theme %></td>
-        <td><%= jam.mechanic %></td>
-        <td><%= link_to 'Show', jam %></td>
-        <td><%= link_to 'Edit', edit_jam_path(jam) %></td>
-        <td><%= link_to 'Destroy', jam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Jam', new_jam_path %>
+<h1>Previous Jams</h1>
+<% if current_user.try(:admin?) %>
+  <%= link_to new_jam_path do %>
+    <button class="btn btn-primary">New Jam</button>
+  <% end %>
+<% end %>
+<div class="container">
+  <div class="row">
+    <%= render @jams %>
+  </div>
+</div>

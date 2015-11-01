@@ -1,5 +1,6 @@
 class JamsController < ApplicationController
   before_action :set_jam, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
 
   # GET /jams
   # GET /jams.json
