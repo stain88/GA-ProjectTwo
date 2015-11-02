@@ -22,7 +22,7 @@ class ScreenshotUploader < CarrierWave::Uploader::Base
   #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
-  "/images/gitd_logo.png"
+  "gitd_logo.png"
   end
 
   # Process files as they are uploaded:
