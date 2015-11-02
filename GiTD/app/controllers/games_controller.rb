@@ -3,7 +3,7 @@ class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   load_and_authorize_resource
-  skip_authorize_resource :only => [:new]
+  skip_authorize_resource :only => [:new, :create]
 
   # GET /games
   # GET /games.json
@@ -74,6 +74,6 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:title, :description, :screenshots, :url, :jam_id)
+      params.require(:game).permit(:title, :description, :screenshots, :url, :height, :width, :jam_id)
     end
 end

@@ -4,8 +4,8 @@
   <div class="form-group">
     <%= f.input :title, autofocus: true, required: true, label: false, placeholder: "Title", input_html: {class: "form-conrol"} %>
     <%= f.input :description, label: false, placeholder: "Description", input_html: {class: "form-conrol"} %>
-    <%#= f.input :height, label: false, placeholder: "Height", input_html: {class: "form-conrol"} %>
-    <%#= f.input :width, label: false, placeholder: "Width", input_html: {class: "form-conrol"} %>
+    <%= f.input :height, label: false, placeholder: "Height", input_html: {class: "form-conrol"} %>
+    <%= f.input :width, label: false, placeholder: "Width", input_html: {class: "form-conrol"} %>
     <%= f.input :url, label: false, placeholder: "URL", input_html: {class: "form-conrol"} %>
     <%= f.input :screenshots, as: :file %>
     <%= f.association :jam, label: false, prompt: "Which Jam was this for?", input_html: {class: "form-conrol"} %>

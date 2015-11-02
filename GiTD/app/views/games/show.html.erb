@@ -5,31 +5,25 @@
       <h1><%= @game.title %></h1>
       </div>
       <div class="col-md-6">
-        <h3>By <%= @game.user.username %></h3>
+        <h3>
+          By <%= @game.user.username %>
+          <% if current_user == @game.user || current_user.try(:admin?) %>
+            <%= link_to edit_game_path(@game) do %>
+              <button class="btn btn-warning">Edit</button>
+            <% end %>
+          <% end %>
+          <%= link_to games_path do %>
+            <button class="btn btn-info">Back</button>
+          <% end %>
+        </h3>
         <h5><%= @game.description %></h5>
       </div>
     </div>
     <div class="row">
-      <h2>Play here: <%= link_to @game.url, @game.url %></h2>
+      <h2><%= link_to "Play on Kongregate", @game.url %></h2>
+    </div>
+    <div class="row">
+      <iframe width="<%= @game.width %>" height="<%= @game.height %>" src="https://<%= @game.url %>" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </div>
-
-<p>
-  <strong>Screenshot:</strong>
-  <%= image_tag @game.screenshots_url(:thumb).to_s %>
-</p>
-
-
-<p>
-  <strong>Owner:</strong>
-  <%= @game.user.username %>
-</p>
-
-<p>
-  <strong>Jam:</strong>
-  <%= @game.jam.title %>
-</p>
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
