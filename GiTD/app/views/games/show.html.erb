@@ -15,6 +15,11 @@
           <%= link_to games_path do %>
             <button class="btn btn-info">Back</button>
           <% end %>
+          <% if current_user.try(:admin?) %>
+            <%= link_to @game, method: :delete, data: {confirm: "Are you sure?"} do %>
+              <button class="btn btn-danger">Delete</button>
+            <% end %>
+          <% end %>
         </h3>
         <h5><%= @game.description %></h5>
       </div>
