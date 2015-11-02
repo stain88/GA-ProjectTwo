@@ -25,6 +25,11 @@
       <% end %>
     </div>
     <div class="row">
+      <% unless @game.game_file.blank? %>
+        t
+      <% else %>
+        f
+      <% end %>
       <iframe width="<%= @game.width %>" height="<%= @game.height %>" src="https://<%= @game.url %>" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
