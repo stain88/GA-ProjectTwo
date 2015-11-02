@@ -32,9 +32,16 @@ body::after {
   }
   .tn-custom {
     background-color: transparent;
+    height: 250px;
   }
 }
 
+h1 {
+  a:hover {
+    text-decoration: none;
+    background-color: transparent;
+  }
+}
 
 // Simple-form extra stylings //
 
