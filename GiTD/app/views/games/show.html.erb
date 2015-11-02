@@ -25,8 +25,14 @@
       </div>
     </div>
     <div class="row">
-      <% if !@game.kong_link.blank? %>
-        <h2><%= link_to "Play on Kongregate", @game.kong_link, target: "_blank" %></h2>
+      <% if !@game.external_link.blank? %>
+        <% if @game.external_link=~/^.*kongregate.*$/ %>
+          <h2><%= link_to "Play on Kongregate", @game.external_link, target: "_blank" %></h2>
+        <% elsif @game.external_link=~/^.*fastswf.*$/ %>
+          <h2><%= link_to "Play on Fastswf.com", @game.external_link, target: "_blank" %></h2>
+        <% else %>
+          <h2><%= link_to "Play externally", @game.external_link, target: "_blank" %></h2>
+        <% end %>
       <% end %>
     </div>
     <div class="row">
