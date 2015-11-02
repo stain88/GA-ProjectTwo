@@ -20,7 +20,9 @@
       </div>
     </div>
     <div class="row">
-      <h2><%= link_to "Play on Kongregate", @game.url %></h2>
+      <% if !!(/^.*kongregate.*$/).match(@game.url) %>
+        <h2><%= link_to "Play on Kongregate", @game.url %></h2>
+      <% end %>
     </div>
     <div class="row">
       <iframe width="<%= @game.width %>" height="<%= @game.height %>" src="https://<%= @game.url %>" frameborder="0" allowfullscreen></iframe>
