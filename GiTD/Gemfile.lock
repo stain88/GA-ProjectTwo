@@ -197,6 +197,7 @@ GEM
     remotipart (1.2.1)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    rmagick (2.15.4)
     safe_yaml (1.0.4)
     sanitize (2.0.6)
       nokogiri (>= 1.4.4)
@@ -259,6 +260,7 @@ DEPENDENCIES
   rails (= 4.2.4)
   rails_12factor
   rails_admin
+  rmagick
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form
