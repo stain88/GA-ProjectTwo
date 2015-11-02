@@ -13,7 +13,6 @@ class Ability
         can :manage, Jam
     else
         can :read, :all
-        can [:edit], Game, :user_id => user.id
     end
     # Define abilities for the passed in user here. For example:
     #

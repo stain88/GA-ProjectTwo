@@ -3,6 +3,7 @@ class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   load_and_authorize_resource
+  skip_authorize_resource :only => [:new]
 
   # GET /games
   # GET /games.json

@@ -1,5 +1,11 @@
 <div class="container">
-<h1>All Games</h1>
+<h1>All Games
+<% if current_user %>
+  <%= link_to new_game_path do %>
+    <button class="btn btn-primary">New Game</button>
+  <% end %>
+<% end %>
+</h1>
   <% @jams.each do |jam| %>
     <div class="row">
       <h2><%= link_to "GiTD \##{jam.title}", jam_path(jam.id) %></h2>
@@ -46,6 +52,3 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Game', new_game_path %>
