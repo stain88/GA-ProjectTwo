@@ -25,14 +25,18 @@ body::after {
   text-align: center;
 }
 
-.col-md-4 {
+.col-md-4, .col-md-3 {
   a {
     text-decoration: none;
     color: #ddd;
   }
   .tn-custom {
     background-color: transparent;
+    border: none;
     height: 250px;
+  }
+  .tn-jam {
+    border: 1px solid white;
   }
 }
 
