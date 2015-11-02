@@ -30,4 +30,7 @@
 
 <div class="container">
   <h1>Entries: </h1> 
+  <% @games.each do |game| %>
+  <%= game.title %>
+  <% end %>
 </div>

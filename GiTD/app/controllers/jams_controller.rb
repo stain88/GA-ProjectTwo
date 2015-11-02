@@ -11,6 +11,7 @@ class JamsController < ApplicationController
   # GET /jams/1
   # GET /jams/1.json
   def show
+    @games = Game.where(jam_id: params[:id])
   end
 
   # GET /jams/new

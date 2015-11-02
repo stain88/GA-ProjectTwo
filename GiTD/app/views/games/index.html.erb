@@ -1,4 +1,18 @@
-<h1>Listing Games</h1>
+<div class="container">
+<h1>All Games</h1>
+  <% @jams.each do |jam| %>
+    <div class="row">
+      <h2><%= link_to "GiTD \##{jam.title}", jam_path(jam.id) %></h2>
+      <div class="row">
+        <% @games.each do |game| %>
+          <% if game.jam == jam %>
+            <%= render game %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <table>
   <thead>

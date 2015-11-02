@@ -6,6 +6,7 @@ class GamesController < ApplicationController
   # GET /games.json
   def index
     @games = Game.order(jam_id: :asc)
+    @jams = Jam.order(title: :desc)
   end
 
   # GET /games/1
