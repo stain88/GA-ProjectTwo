@@ -1,5 +1,7 @@
+# require 'carrierwave/orm/activerecord'
+
 class Game < ActiveRecord::Base
   belongs_to :user
   belongs_to :jam
-  mount_uploaders :screenshots, ScreenshotUploader
+  mount_uploader :screenshots, ScreenshotUploader
 end
