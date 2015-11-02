@@ -20,8 +20,8 @@
       </div>
     </div>
     <div class="row">
-      <% if !!(/^.*kongregate.*$/).match(@game.url) %>
-        <h2><%= link_to "Play on Kongregate", @game.url %></h2>
+      <% if !@game.kong_link.blank? %>
+        <h2><%= link_to "Play on Kongregate", @game.kong_link, target: "_blank" %></h2>
       <% end %>
     </div>
     <div class="row">
