@@ -25,7 +25,7 @@
         <div class="panel-body">
           <% @user.active_friends.last(16).each do |user| %>
             <%= link_to user_path(user.username) do %>
-              <%= @user.profile_pic.blank? ? (gravatar_tag @user.email, size: 40) : (image_tag @user.profile_pic, size: "40") %>
+              <%= user.profile_pic.blank? ? (gravatar_tag user.email, size: 40) : (image_tag user.profile_pic, size: "40") %>
             <% end %>
           <% end %>
         </div>
