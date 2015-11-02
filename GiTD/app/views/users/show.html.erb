@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <%= @user.profile_pic.blank? ? (gravatar_tag @user.email, size: 200) : (image_tag @user.profile_pic, size: "200") %>
+        <%= get_pic @user, 200 %>
       </div>
       <div class="col-md-4">
         <h3><%= @user.username %></h3>
@@ -25,7 +25,7 @@
         <div class="panel-body">
           <% @user.active_friends.last(16).each do |user| %>
             <%= link_to user_path(user.username) do %>
-              <%= user.profile_pic.blank? ? (gravatar_tag user.email, size: 40) : (image_tag user.profile_pic, size: "40") %>
+              <%= get_pic user, 40 %>
             <% end %>
           <% end %>
         </div>
