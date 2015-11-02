@@ -12,7 +12,7 @@ module UsersHelper
     end
   end
   def get_pic user, area
-    user.profile_pic.blank? ? (gravatar_tag user.email, size: area) : (image_tag user.profile_pic, size: area.to_str)
+    user.profile_pic.blank? ? (gravatar_tag user.email, size: area) : (image_tag user.profile_pic, size: area.to_s)
   end
 
 end
