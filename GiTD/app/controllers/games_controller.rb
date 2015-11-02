@@ -1,6 +1,8 @@
 class GamesController < ApplicationController
+
   before_action :set_game, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  load_and_authorize_resource
 
   # GET /games
   # GET /games.json
@@ -56,7 +58,7 @@ class GamesController < ApplicationController
   # DELETE /games/1
   # DELETE /games/1.json
   def destroy
-    current_user.games.find(params[:id]).destroy
+    @game.destroy
     respond_to do |format|
       format.html { redirect_to games_url, notice: 'Game was successfully destroyed.' }
       format.json { head :no_content }

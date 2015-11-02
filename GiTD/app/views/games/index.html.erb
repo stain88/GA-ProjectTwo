@@ -39,7 +39,7 @@
         <td><%= game.user.username %></td>
         <td><%= game.jam.title %></td>
         <td><%= link_to 'Show', game_path(game.title) %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
+        <td><% if can? :edit, game %><%= link_to 'Edit', edit_game_path(game) %><% end %></td>
         <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
