@@ -6,7 +6,7 @@
 <% creator = comment.creator
    name = Commontator.commontator_name(creator) || ''
    link = Commontator.commontator_link(creator, main_app) || ''
-   avatar = Commontator.commontator_avatar(creator, self) || ''
+   avatar = get_pic(creator, 50)
 %>
 
 <div id="comment_<%= comment.id.to_s %>_div" class="comment">
