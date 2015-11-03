@@ -40,7 +40,7 @@
         <embed src="<%= @game.game_file_url %>" width="<%= @game.width %>" height="<%= @game.height %>" />
       <% end %>
       <% unless @game.url.blank? %>
-        <iframe width="<%= @game.width %>" height="<%= @game.height %>" src="https://<%= @game.url %>" frameborder="0" allowfullscreen></iframe>
+        <iframe width="<%= @game.width %>" height="<%= @game.height %>" src="<%= @game.url %>" frameborder="0" allowfullscreen></iframe>
       <% end %>
     </div>
   </div>
