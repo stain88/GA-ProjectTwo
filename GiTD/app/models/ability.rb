@@ -11,6 +11,8 @@ class Ability
         can :manage, :all
     elsif user.moderator?
         can :manage, Jam
+        can :manage, Game
+        can :read, :all
     else
         can :read, :all
     end
