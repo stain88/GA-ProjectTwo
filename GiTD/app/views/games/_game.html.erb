@@ -12,6 +12,6 @@
     <%= link_to "upvote", like_game_path(game), method: :put %> 
     <%= link_to "downvote", dislike_game_path(game), method: :put %>
   <% else %>
-    Score: <%= game.get_upvotes.size %> (<%= link_to "Cancel vote", unvote_game_path(game), method: :put if current_user %>)
+    Score: <%= game.get_upvotes.size %> <%= link_to "(Cancel vote)", unvote_game_path(game), method: :put if current_user %>
   <% end %>
 </div>
