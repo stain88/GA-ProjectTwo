@@ -8,4 +8,10 @@
       <h5>By <%= game.user.username %></h5>
     </div>
   <% end %>
+  <% if current_user && !(current_user.voted_for? game) %>
+    <%= link_to "upvote", like_game_path(game), method: :put %> 
+    <%= link_to "downvote", dislike_game_path(game), method: :put %>
+  <% else %>
+    Score: <%= game.get_upvotes.size %> (<%= link_to "Cancel vote", unvote_game_path(game), method: :put if current_user %>)
+  <% end %>
 </div>

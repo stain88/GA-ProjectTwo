@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
 
   acts_as_commontator
+  acts_as_voter
 
   has_many :games
   has_many :friendships, dependent: :destroy

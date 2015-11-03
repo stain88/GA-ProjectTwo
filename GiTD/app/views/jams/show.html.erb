@@ -29,7 +29,7 @@
 </div>
 
 <div class="container">
-  <h1>Entries: </h1> 
+  <h1>Entries: </h1> <%= @games %>
   <% @games.each do |game| %>
     <div class="col-md-3">
     <%= link_to game_path(game.title) do %>

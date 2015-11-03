@@ -8,4 +8,5 @@ class Game < ActiveRecord::Base
   validates_presence_of :jam_id
 
   acts_as_commontable
+  acts_as_votable
 end

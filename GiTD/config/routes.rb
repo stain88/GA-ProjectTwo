@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   root 'pages#home'
-  resources :games
+  resources :games do
+    member do
+      put "like", to: "games#upvote"
+      put "dislike", to: "games#downvote"
+      put "unvote", to: "games#unvote"
+    end
+  end
   resources :jams
   # This line mounts Forem's routes at /forums by default.
   # This means, any requests to the /forums URL of your application will go to Forem::ForumsController#index.

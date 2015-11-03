@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
 
-  before_action :set_game, only: [:show, :edit, :update, :destroy]
+  before_action :set_game, only: [:show, :edit, :update, :destroy, :upvote]
   before_action :authenticate_user!, except: [:index, :show]
   load_and_authorize_resource
   skip_authorize_resource :only => [:new, :create]
@@ -65,6 +65,21 @@ class GamesController < ApplicationController
       format.html { redirect_to games_url, notice: 'Game was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def upvote
+    @game.upvote_by current_user
+    redirect_to games_path
+  end
+
+  def downvote
+    @game.downvote_by current_user
+    redirect_to games_path
+  end
+
+  def unvote
+    @game.unvote_by current_user
+    redirect_to games_path
   end
 
   private
