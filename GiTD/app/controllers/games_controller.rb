@@ -15,6 +15,7 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    commontator_thread_show(@game)
   end
 
   # GET /games/new

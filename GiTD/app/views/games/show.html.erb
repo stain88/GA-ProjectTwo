@@ -36,12 +36,14 @@
       <% end %>
     </div>
     <div class="row">
-      <% unless @game.game_file.blank? %>
+      <% if !@game.game_file.blank? %>
         <embed src="<%= @game.game_file_url %>" width="<%= @game.width %>" height="<%= @game.height %>" />
-      <% end %>
-      <% unless @game.url.blank? %>
+      <% elsif !@game.url.blank? %>
         <iframe width="<%= @game.width %>" height="<%= @game.height %>" src="<%= @game.url %>" frameborder="0" allowfullscreen></iframe>
       <% end %>
+    </div>
+    <div class="row">
+      <%= commontator_thread(@game) %>
     </div>
   </div>
 </div>

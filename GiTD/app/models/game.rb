@@ -6,4 +6,6 @@ class Game < ActiveRecord::Base
 
   validates_presence_of :title
   validates_presence_of :jam_id
+
+  acts_as_commontable
 end
