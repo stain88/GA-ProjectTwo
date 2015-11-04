@@ -2,7 +2,7 @@
   
 </div>
 
-<div class="container">
+<div class="container text-center animated fadeInUp">
   <% unless Jam.count==0 %>
     <% @jam = Jam.order("title DESC").first %>
     <h1>Latest Jam: GiTD #<%= @jam.title %></h1>

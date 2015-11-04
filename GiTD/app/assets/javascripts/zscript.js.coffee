@@ -16,3 +16,6 @@ $ ->
 
   $(".btn-lg").each ->
     animationHover this, "shake"
+
+  $(".hp-jumb").each ->
+    animationHover this, "tada"
