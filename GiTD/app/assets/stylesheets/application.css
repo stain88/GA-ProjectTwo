@@ -12,6 +12,7 @@
  *
  *= require 'forem/base'
  *= require commontator/application
+ *= require animate
  *= require_tree .
  *= require_self
  */
