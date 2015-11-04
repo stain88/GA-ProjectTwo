@@ -10,6 +10,10 @@
   float: right;
 }
 
+.thread_reply .comment_form_field {
+  color: #222;
+}
+
 .thread_header {
   font-size: 16px;
   font-weight: bold;
