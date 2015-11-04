@@ -9,8 +9,18 @@
     </div>
   <% end %>
   <% if current_user && !(current_user.voted_for? game) %>
-    <%= link_to "upvote", like_game_path(game), method: :put %> 
-    <%= link_to "downvote", dislike_game_path(game), method: :put %>
+    <div class="vote-buttons">
+      <%= link_to like_game_path(game), method: :put do %>
+      <button class="btn btn-success">
+        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+      </button>
+      <% end %>
+      <%= link_to dislike_game_path(game), method: :put do %>
+      <button class="btn btn-warning">
+        <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+      </button>
+      <% end %>
+    </div>
   <% else %>
     Score: <%= game.get_upvotes.size %> <%= link_to "(Cancel vote)", unvote_game_path(game), method: :put if current_user %>
   <% end %>
