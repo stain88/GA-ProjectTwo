@@ -10,16 +10,6 @@
   float: right;
 }
 
-.thread_new_comment_link a {
-  color: #222;
-}
-
-.thread_new_comment_link a:hover {
-  color: #333;
-  background-color: transparent;
-  text-decoration: none;
-}
-
 .thread_header {
   font-size: 16px;
   font-weight: bold;

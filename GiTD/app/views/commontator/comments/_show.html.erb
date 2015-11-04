@@ -4,9 +4,9 @@
 %>
 
 <% creator = comment.creator
-   name = Commontator.commontator_name(creator) || ''
-   link = Commontator.commontator_link(creator, main_app) || ''
-   avatar = get_pic(creator, 70)
+  name = Commontator.commontator_name(creator) || ''
+  link = Commontator.commontator_link(creator, main_app) || ''
+  avatar = creator.profile_pic.blank? ? (gravatar_tag creator.email, size: 70, d: "identicon") : (image_tag creator.profile_pic, size: "70")
 %>
 
 <div id="comment_<%= comment.id.to_s %>_div" class="comment">
