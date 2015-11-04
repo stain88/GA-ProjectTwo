@@ -15,14 +15,19 @@
   padding-right: 10px;
 
   color: #000;
-  border-color: #DDD;
-  background-color: #FFF;
+  border-color: #750000;
+  background-color: #b81414;
   
   clear: both;
 }
 
 .comment_actions {
   float: right;
+}
+
+.comment_actions a:hover {
+  text-decoration: none;
+  background-color: transparent;
 }
 
 .comment_body {
@@ -59,7 +64,7 @@
 }
 
 .comment_timestamp {
-  color: #666;
+  color: #222;
 }
 
 .comment_votes {
@@ -118,4 +123,14 @@
 
 .comment_error_explanation ul {
   list-style-position: inside;
+}
+
+.comment_commontator a {
+  color: #222;
+}
+
+.comment_commontator a:hover {
+  color: #333;
+  background-color: transparent;
+  text-decoration: none;
 }
