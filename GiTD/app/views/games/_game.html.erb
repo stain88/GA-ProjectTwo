@@ -6,22 +6,27 @@
     <div class="caption">
       <h3><%= game.title %></h3>
       <h5>By <%= game.user.username %></h5>
-    </div>
-  <% end %>
-  <% if current_user && !(current_user.voted_for? game) %>
-    <div class="vote-buttons">
-      <%= link_to like_game_path(game), method: :put do %>
-      <button class="btn btn-success">
-        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-      </button>
+      <% if current_user && !(current_user.voted_for? game) %>
+        <%= link_to like_game_path(game), method: :put do %>
+          <button class="btn btn-success">
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+          </button>
+          <% end %>
+          <%= link_to dislike_game_path(game), method: :put do %>
+          <button class="btn btn-warning">
+            <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+          </button>
+        <% end %>
+      <% else %>
+        Score: <%= game.get_upvotes.size %> 
+        <% if current_user %>
+          <%= link_to unvote_game_path(game), method: :put do %>
+            <button class="btn btn-info">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel vote
+            </button>
+          <% end %>
+        <% end %>
       <% end %>
-      <%= link_to dislike_game_path(game), method: :put do %>
-      <button class="btn btn-warning">
-        <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
-      </button>
-      <% end %>
     </div>
-  <% else %>
-    Score: <%= game.get_upvotes.size %> <%= link_to "(Cancel vote)", unvote_game_path(game), method: :put if current_user %>
   <% end %>
 </div>
