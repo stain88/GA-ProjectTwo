@@ -183,6 +183,21 @@ $dropDown       : true;
       border: none !important;
       a.title {
         color: #222;
+        &:hover {
+          color: #333;
+          background-color: transparent;
+          text-decoration: none;
+        }
+      }
+      span.last_post {
+        a {
+          color: #222;
+          &:hover {
+            color: #333;
+            background-color: transparent;
+            text-decoration: none;
+          }
+        }
       }
     }
   }
