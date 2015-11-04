@@ -30,7 +30,7 @@
       <%= link_to t("commontator.thread.actions.#{filter_string}"),
                   commontator.thread_path(thread, :show_all => (show_all ? nil : true)),
                   :id => "thread_#{thread.id.to_s}_#{filter_string}_link",
-                  :class => "thread_#{filter_string}_link",
+                  :class => "thread_#{filter_string}_link btn btn-info btn-xs",
                   :remote => true %>
 
       &nbsp;
@@ -41,7 +41,7 @@
                 :confirm => (!is_closed ? t('commontator.thread.actions.confirm_close') : nil),
                 :method => :put,
                 :id => "thread_#{thread.id.to_s}_#{close_string}_link",
-                :class => "thread_#{close_string}_link",
+                :class => "thread_#{close_string}_link btn btn-warning btn-xs",
                 :remote => true %>
   <% end %>
 </span>

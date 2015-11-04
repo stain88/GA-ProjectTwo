@@ -10,11 +10,6 @@
   float: right;
 }
 
-.thread_actions a:hover {
-  text-decoration: none;
-  background-color: transparent;
-}
-
 .thread_new_comment_link a {
   color: #222;
 }
