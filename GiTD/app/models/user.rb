@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   acts_as_commontator
   acts_as_voter
 
-  has_many :games
+  has_many :games, dependent: :destroy
   has_many :friendships, dependent: :destroy
   has_many :inverse_friendships, class_name: "Friendship", foreign_key: "friend_id", dependent: :destroy
 
