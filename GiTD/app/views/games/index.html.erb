@@ -9,7 +9,9 @@
 </h1>
   <% @jams.each do |jam| %>
     <div class="row">
-      <h2><%= link_to "GiTD \##{jam.title}", jam_path(jam.id) %></h2>
+      <%= link_to jam_path(jam.id) do %>
+        <h2><button class="btn btn-lg btn-custom">GiTD #<%= jam.title %></button></h2>
+      <% end %>
       <div class="row">
         <% @games.each do |game| %>
           <% if game.jam == jam %>
