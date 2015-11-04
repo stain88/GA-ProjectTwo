@@ -167,3 +167,23 @@ $dropDown       : true;
     }
   }
 }
+
+// Forum table
+.table-striped {
+  th {
+    border: none !important;
+  }
+  tbody {
+    tr:nth-child(odd) {
+      td {
+        background-color: #da3535;
+      }
+    }
+    td {
+      border: none !important;
+      a.title {
+        color: #222;
+      }
+    }
+  }
+} 
