@@ -25,13 +25,13 @@
             <%= link_to_if Forem.user_profile_links, post.user.forem_name, [main_app, post.user] %>
           <% end %>
         </div>
-        <div class='icon'><%= get_pic(post.user, 60) %></div>
+        <div class='icon'>
+          <%= get_pic(post.user, 60) %>
+        </div>
+        <%= link_to post_time_tag(post), "\#post-#{post.id}" %>
       </div>
 
-      <div class='contents col-md-7'>
-        <a href='#post-<%= post.id %>'>
-          <%= post_time_tag(post) %>
-        </a>
+      <div class='contents col-md-6'>
         <%= forem_format(post.text) %>
 
         <% if post.reply_to %>
@@ -39,7 +39,8 @@
             <%= link_to "#{t("forem.post.in_reply_to")} #{post.reply_to.user.forem_name}", "#post-#{post.reply_to.id}" %>
           </div>
         <% end %>
-
+      </div>
+      <div class='contents col-md-4'>
         <% if forem_user %>
           <div class='btn-group'>
             <% if can?(:reply, post.topic) %>
