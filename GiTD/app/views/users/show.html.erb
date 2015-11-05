@@ -37,7 +37,7 @@
           <h3 class="panel-title">Recent activity</h3>
         </div>
         <ul class="list-group">
-          <% @activity.each do |activity| %>
+          <% @activity.last(10).each do |activity| %>
             <% case activity.class.to_s %>
             <% when "Forem::Post" %>
               <li class="list-group-item">Posted <%= activity.text.gsub(/<blockquote>.*<\/blockquote>/,"") %> in the forums</li>
