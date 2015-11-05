@@ -20,9 +20,11 @@ class UsersController < ApplicationController
   end
   
   def show
-    @comments = Commontator::Comment.where(creator_id: params[:id])
-    @posts = Forem::Post.where(user_id: params[:id])
-    # @activity = @comments + @posts
+    @comments = Commontator::Comment.where(creator_id: @user)
+    @posts = Forem::Post.where(user_id: @user)
+    @games = Game.where(user_id: @user)
+    @activity = [@comments,@posts,@games].flatten.sort { |x,y| y.created_at <=> x.created_at }
+    p @activity
   end
 
   private

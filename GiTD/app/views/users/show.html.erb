@@ -32,16 +32,25 @@
       </div>
     </div>
     <div class="col-md-6">
-      Stuff about posts and comments to go here
-      <% @comments.each do |comment| %>
-        Wrote <%= comment %>
-      <% end %>
-      <% @posts.each do |post| %>
-        Posted <%= post %> in forum
-      <% end %>
-      <%#= Forem::Post.where(user_id: @user).each do |post| %>
-        Posted <%#= post %> in forum
-      <%# end %>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Recent activity</h3>
+        </div>
+        <ul class="list-group">
+          <% @activity.each do |activity| %>
+            <% case activity.class.to_s %>
+            <% when "Forem::Post" %>
+              <li class="list-group-item">Posted <%= activity.text %> in forum</li>
+            <% when "Commontator::Comment" %>
+              <li class="list-group-item">Commented <%= activity.body %> on game</li>
+            <% when "Game" %>
+              <li class="list-group-item">Uploaded <%= activity.title %></li>
+            <% else %>
+              <li class="list-group-item">This user has done something, but I'm not sure what</li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
     </div>
     <div class="col-md-3">
       <div class="panel panel-default">

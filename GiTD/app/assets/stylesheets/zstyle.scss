@@ -51,15 +51,20 @@ h1,h2,h3, .caption {
   }
 }
 
-.panel-body {
-  ul.game {
-    a:link, a:visited {
-      color: #4a0000;
+.panel {
+  .panel-body {
+    ul.game {
+      a:link, a:visited {
+        color: #4a0000;
+      }
+      li {
+        list-style-type: none;
+        margin: 5px 0;
+      }
     }
-    li {
-      list-style-type: none;
-      margin: 5px 0;
-    }
+  }
+  .list-group-item {
+    color: #4a0000;
   }
 }
 // Simple-form extra stylings //
