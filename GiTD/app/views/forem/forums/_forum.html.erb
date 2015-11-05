@@ -1,7 +1,7 @@
 <% if can?(:read, forum) %>
   <tr class="forum <%= cycle("odd", "even") %>">
     <td>
-      <%= link_to forem_emojify(forum.title), forem.forum_path(forum), :class => "title" %>
+      <h2><%= link_to forem_emojify(forum.title), forem.forum_path(forum), :class => "title" %></h2>
       <div class='description'><%= forem_format(forum.description) %></div>
       <%= t('forem.forums.index.last_post') -%>
       <span class='last_post'>
