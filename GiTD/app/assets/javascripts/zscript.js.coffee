@@ -6,9 +6,9 @@ animationHover = (element, animation) ->
 
 $ ->
   flashCallback = ->
-    $(".alert").fadeOut()
-  $(".alert").bind 'click', (ev) =>
-    $(".alert").fadeOut()
+    $(".alert-info").fadeOut()
+  $(".alert-info").bind 'click', (ev) =>
+    $(".alert-info").fadeOut()
   setTimeout flashCallback, 3000
 
   $("button.btn-lg").each ->
