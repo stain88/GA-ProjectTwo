@@ -40,9 +40,9 @@
           <% @activity.last(10).each do |activity| %>
             <% case activity.class.to_s %>
             <% when "Forem::Post" %>
-              <li class="list-group-item">Posted <%= activity.text.gsub(/<blockquote>.*<\/blockquote>/,"") %> in the forums</li>
+              <li class="list-group-item">Posted <%= truncate(activity.text.gsub(/<blockquote>.*<\/blockquote>/,""), separator: ' ') %> in the forums</li>
             <% when "Commontator::Comment" %>
-              <li class="list-group-item">Commented <%= activity.body %> on a game</li>
+              <li class="list-group-item">Commented <%= truncate(activity.body, separator: ' ') %> on a game</li>
             <% when "Game" %>
               <li class="list-group-item">Uploaded <%= activity.title %></li>
             <% else %>
