@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#home'
+  get '/about' => 'pages#about'
+  get '/rules' => 'pages#rules'
   resources :games do
     member do
       put "like", to: "games#upvote"

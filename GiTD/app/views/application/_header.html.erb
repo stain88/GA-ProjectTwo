@@ -13,6 +13,10 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "About", main_app.about_path %></li>
+        <li><%= link_to "Rules", main_app.rules_path %></li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Jams", main_app.jams_path %></li>
         <li><%= link_to "Forum", main_app.forem_path %></li>
