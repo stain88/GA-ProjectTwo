@@ -33,16 +33,27 @@
     </div>
     <div class="col-md-6">
       Stuff about posts and comments to go here
+      <% @comments.each do |comment| %>
+        Wrote <%= comment %>
+      <% end %>
+      <% @posts.each do |post| %>
+        Posted <%= post %> in forum
+      <% end %>
+      <%#= Forem::Post.where(user_id: @user).each do |post| %>
+        Posted <%#= post %> in forum
+      <%# end %>
     </div>
     <div class="col-md-3">
       <div class="panel panel-default">
         <div class="panel-heading">Games (<%= @user.games.size %>)</div>
         <div class="panel-body">
-          <% @user.games.last(4).each do |game| %>
-            <%= link_to game_path(game.title) do %>
-              <%= game.title %>
+          <ul class="game">
+            <% @user.games.each do |game| %>
+              <%= link_to game_path(game.title) do %>
+                <li><button class="btn btn-sm btn-custom"><%= game.title %></button></li>
+              <% end %>
             <% end %>
-          <% end %>
+          </ul>
         </div>
       </div>
     </div>

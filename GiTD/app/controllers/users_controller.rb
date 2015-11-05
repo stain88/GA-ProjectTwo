@@ -20,6 +20,9 @@ class UsersController < ApplicationController
   end
   
   def show
+    @comments = Commontator::Comment.where(creator_id: params[:id])
+    @posts = Forem::Post.where(user_id: params[:id])
+    # @activity = @comments + @posts
   end
 
   private
