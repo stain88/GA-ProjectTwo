@@ -202,11 +202,25 @@ $dropDown       : true;
     }
   }
 }
+
 .post {
   margin: 5px;
   .user, .in-reply-to {
     a {
       color: #222;
+      &:hover {
+        color: #333;
+        background-color: transparent;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.topics {
+  .subject, .latest-post {
+    a {
+      color: #222;      
       &:hover {
         color: #333;
         background-color: transparent;
