@@ -9,7 +9,8 @@
     <%= f.input :width, label: false, placeholder: "Width", input_html: {class: "form-conrol"} %>
     <%= f.input :height, label: false, placeholder: "Height", input_html: {class: "form-conrol"} %>
     <%= f.input :game_file, as: :file, label: "Upload a game file: (only .swf for now)" %>
-    <%= f.input :screenshots, as: :file, label: "Upload a screenshot:" %>
+    <%= f.input :screenshots, multiple: true, as: :file, label: "Upload a screenshot:" %>
+    <%= f.input :multifiles, multiple: true, as: :file, label: "Upload a screenshot:" %>
     <%= f.association :jam, required: true, label: false, prompt: "Which Jam was this for?", input_html: {class: "form-control"} %>
   </div>
 
