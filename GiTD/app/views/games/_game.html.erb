@@ -1,11 +1,7 @@
 <div class="col-md-3">
   <%= link_to game_path(game.title) do %>
     <div class="thumbnail tn-custom">
-      <% if game.screenshots.size > 0 %>
-        <%= image_tag game.screenshots[0].url(:thumb).to_s %> 
-      <% else %>
-        <%= image_tag "thumb_gitd_logo.png" %>
-      <% end %>
+      <%= get_screenies game %>
     </div>
     <div class="caption">
       <h3><%= game.title %></h3>
