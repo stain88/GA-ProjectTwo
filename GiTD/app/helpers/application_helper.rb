@@ -10,7 +10,7 @@ module ApplicationHelper
         a = game.screenshots[0].url[0..game.screenshots[0].url.index("%").to_i-1]
         b = game.screenshots[0].url[game.screenshots[0].url.index("%5B").to_i..game.screenshots[0].url.length]
         c = b[6..-7].split("%22%2C%20%22")
-        image_tag a+c[0]
+        image_tag a+"thumb_"+c[rand(c.size)]
         # c.each do |pic|
         #   image_tag (a+pic).to_s
         # end
