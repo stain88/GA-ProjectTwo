@@ -22,6 +22,7 @@ class JamsController < ApplicationController
 
   # GET /jams/1/edit
   def edit
+    @games = @jam.games
     authorize! :edit, @jam
   end
 
