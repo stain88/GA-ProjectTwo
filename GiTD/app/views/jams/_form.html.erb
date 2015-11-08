@@ -6,6 +6,7 @@
     <%= f.input :theme, required: true, label: false, placeholder: "Theme", input_html: {class: "form-control"} %>
     <%= f.input :mechanic, required: true, label: false, placeholder: "Mechanic", input_html: {class: "form-control"} %>
     <%= f.input :status, required: true, label: false, collection: ["Theme Selection", "Open To Entries", "Voting", "Finished"], prompt: "GiTD Status" %>
+    <%= f.association :games %>
   </div>
 
   <div class="form-group">
