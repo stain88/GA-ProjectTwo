@@ -39,7 +39,7 @@
       <% if !@game.game_file.blank? %>
         <embed src="<%= @game.game_file_url %>" width="<%= @game.width %>" height="<%= @game.height %>" />
       <% elsif !@game.url.blank? %>
-        <iframe width="<%= @game.width %>" height="<%= @game.height %>" src="<%= @game.url %>" frameborder="0" allowfullscreen></iframe>
+        <iframe width="<%= @game.width %>" height="<%= @game.height %>" src="<%= get_site @game.url %>" frameborder="0" allowfullscreen></iframe>
       <% end %>
     </div>
     <div class="row">
