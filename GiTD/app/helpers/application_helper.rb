@@ -28,4 +28,8 @@ module ApplicationHelper
       "https://"+url
     end
   end
+
+  def format_text(text)
+      raw text.gsub(/\n/, "<br>")
+  end
 end
