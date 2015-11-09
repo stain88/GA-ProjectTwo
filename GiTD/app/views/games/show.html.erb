@@ -41,6 +41,7 @@
       <% elsif !@game.url.blank? %>
         <iframe width="<%= @game.width %>" height="<%= @game.height %>" src="<%= get_site @game.url %>" frameborder="0" allowfullscreen></iframe>
       <% elsif !@game.multifiles.blank? %>
+      <%= @game.multifiles %>
         <iframe width="<%= @game.width %>" height="<%= @game.height %>" src="<%= @game.multifiles[0].url %>" frameborder="0" allowfullscreen></iframe>
         <%#= render :file => @game.multifiles_url %>
       <% end %>
