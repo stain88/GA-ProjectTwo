@@ -4,5 +4,5 @@
 
 A website for Game in Ten Days.
 
-![image](GiTD/app/assets/images/GiTD_logo.png)
+![Game in Ten Days](https://github.com/stain88/GA-ProjectTwo/blob/master/GiTD/app/assets/images/gitd_logo.png "Game in Ten Days Logo")
 
