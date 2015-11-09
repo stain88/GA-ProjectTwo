@@ -42,7 +42,7 @@ class GameFileUploader < CarrierWave::Uploader::Base
   #   %w(jpg jpeg gif png)
   # end
   def extension_white_list
-    %w(swf)
+    %w(swf html unity3d)
   end
 
   # Override the filename of the uploaded files:

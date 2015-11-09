@@ -40,6 +40,9 @@
         <embed src="<%= @game.game_file_url %>" width="<%= @game.width %>" height="<%= @game.height %>" />
       <% elsif !@game.url.blank? %>
         <iframe width="<%= @game.width %>" height="<%= @game.height %>" src="<%= get_site @game.url %>" frameborder="0" allowfullscreen></iframe>
+      <% elsif !@game.multifiles.blank? %>
+        <iframe width="<%= @game.width %>" height="<%= @game.height %>" src="<%= @game.multifiles[0].url %>" frameborder="0" allowfullscreen></iframe>
+        <%#= render :file => @game.multifiles_url %>
       <% end %>
     </div>
     <div class="row">
