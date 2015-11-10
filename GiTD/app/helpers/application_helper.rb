@@ -6,14 +6,7 @@ module ApplicationHelper
 
   def get_screenies(game)
     if game.screenshots.size > 0
-      if game.screenshots[0].url.index("%5B").to_i > 0
-        a = game.screenshots[0].url[0..game.screenshots[0].url.index("%").to_i-1]
-        b = game.screenshots[0].url[game.screenshots[0].url.index("%5B").to_i..game.screenshots[0].url.length]
-        c = b[6..-7].split("%22%2C%20%22")
-        image_tag a+"thumb_"+c[rand(c.size)]
-      else
-        image_tag game.screenshots[0].url(:thumb).to_s
-      end
+      image_tag game.screenshots[rand(game.screenshots.size)].url(:thumb)
     else
       image_tag "thumb_gitd_logo.png"
     end
