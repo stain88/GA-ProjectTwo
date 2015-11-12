@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   get '/rules' => 'pages#rules'
   resources :games do
     member do
-      put "like", to: "games#upvote"
-      put "dislike", to: "games#downvote"
-      put "unvote", to: "games#unvote"
+      put "like", to: "games#vote", vote: :upvote
+      put "dislike", to: "games#vote" , vote: :downvote
+      put "unvote", to: "games#vote", vote: :unvote
     end
   end
   resources :jams

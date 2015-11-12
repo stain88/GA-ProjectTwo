@@ -2,7 +2,7 @@ class GamesController < ApplicationController
 
   before_action :set_game, only: [:show, :edit, :update, :destroy, :upvote]
   before_action :authenticate_user!, except: [:index, :show]
-  load_and_authorize_resource
+  authorize_resource
   skip_authorize_resource :only => [:new, :create]
 
   # GET /games
@@ -67,20 +67,25 @@ class GamesController < ApplicationController
     end
   end
 
-  def upvote
-    @game.upvote_by current_user
+  def vote
+    @game.send params[:vote], current_user
     redirect_to games_path
   end
 
-  def downvote
-    @game.downvote_by current_user
-    redirect_to games_path
-  end
+  # def upvote
+  #   @game.upvote_by current_user
+  #   redirect_to games_path
+  # end
 
-  def unvote
-    @game.unvote_by current_user
-    redirect_to games_path
-  end
+  # def downvote
+  #   @game.downvote_by current_user
+  #   redirect_to games_path
+  # end
+
+  # def unvote
+  #   @game.unvote_by current_user
+  #   redirect_to games_path
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
