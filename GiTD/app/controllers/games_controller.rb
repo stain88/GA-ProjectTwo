@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
 
-  before_action :set_game, only: [:show, :edit, :update, :destroy, :upvote]
+  before_action :set_game, only: [:show, :edit, :update, :destroy, :vote]
   before_action :authenticate_user!, except: [:index, :show]
   authorize_resource
   skip_authorize_resource :only => [:new, :create]
@@ -68,29 +68,21 @@ class GamesController < ApplicationController
   end
 
   def vote
-    @game.send params[:vote], current_user
-    redirect_to games_path
+    case params[:vote]
+    when :upvote
+      @game.upvote_by current_user
+    when :downvote
+      @game.downvote_by current_user
+    when :unvote
+      @game.unvote_by current_user
+    end
+    redirect_to games_path      
   end
-
-  # def upvote
-  #   @game.upvote_by current_user
-  #   redirect_to games_path
-  # end
-
-  # def downvote
-  #   @game.downvote_by current_user
-  #   redirect_to games_path
-  # end
-
-  # def unvote
-  #   @game.unvote_by current_user
-  #   redirect_to games_path
-  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_game
-      @game = Game.find_by(title: params[:id]) || Game.find(params[:id])
+      @game = Game.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
