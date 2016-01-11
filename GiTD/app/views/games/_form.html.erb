@@ -8,9 +8,9 @@
     <%= f.input :url, label: false, placeholder: "Iframe link, if applicable", input_html: {class: "form-conrol"} %>
     <%= f.input :width, label: false, placeholder: "Width", input_html: {class: "form-conrol"} %>
     <%= f.input :height, label: false, placeholder: "Height", input_html: {class: "form-conrol"} %>
-    <%= f.input :game_file, as: :file, label: "Upload a game file: (only .swf for now)" %>
+    <%= f.input :game_file, as: :file, label: "Upload a single game file: (.swf or .unity3d)" %>
+    <%= f.input :multifiles, as: :file, label: "Upload multiple game files: (still working on folders)", input_html: { multiple: true} %>
     <%= f.input :screenshots, as: :file, label: "Upload screenshots:", input_html: {multiple: true} %>
-    <%= f.input :multifiles, as: :file, label: "Upload multiple game files:", input_html: { multiple: true} %>
     <%= f.association :jam, required: true, label: false, prompt: "Which Jam was this for?", input_html: {class: "form-control"} %>
   </div>
 
