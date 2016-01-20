@@ -16,7 +16,7 @@
 
   color: #000;
   border-color: #750000;
-  background-color: #b81414;
+  background-color: #514e4b;
   
   clear: both;
 }
@@ -36,6 +36,8 @@
 
 .comment_body p {
 	margin: 0px;
+  font-size: 12px;
+  color: whitesmoke;
 
 	overflow: hidden;
 }
