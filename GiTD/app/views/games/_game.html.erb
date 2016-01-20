@@ -1,5 +1,5 @@
 <div class="col-md-3">
-  <%= link_to game_path(game.id) do %>
+  <%= link_to game_path(game.title) do %>
     <div class="thumbnail tn-custom">
       <%= get_screenies game %>
     </div>
@@ -7,12 +7,12 @@
       <h3><%= game.title %></h3>
       <h5>By <%= game.user.username %></h5>
       <% if current_user && !(current_user.voted_for? game) %>
-        <%= link_to like_game_path(game), method: :put do %>
+        <%= link_to like_game_path(game.title), method: :put do %>
           <button class="btn btn-success">
             <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
           </button>
           <% end %>
-          <%= link_to dislike_game_path(game), method: :put do %>
+          <%= link_to dislike_game_path(game.title), method: :put do %>
           <button class="btn btn-warning">
             <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
           </button>
@@ -20,7 +20,7 @@
       <% else %>
         Score: <%= game.get_upvotes.size %> 
         <% if current_user %>
-          <%= link_to unvote_game_path(game), method: :put do %>
+          <%= link_to unvote_game_path(game.title), method: :put do %>
             <button class="btn btn-info">
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel vote
             </button>
