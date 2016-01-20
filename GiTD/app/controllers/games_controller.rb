@@ -34,8 +34,8 @@ class GamesController < ApplicationController
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
-        format.json { render :show, status: :created, location: @game }
+        format.html { redirect_to game_path(@game.title), notice: 'Game was successfully created.' }
+        format.json { render :show, status: :created, location: game_path(@game.title) }
       else
         format.html { render :new }
         format.json { render json: @game.errors, status: :unprocessable_entity }
@@ -48,8 +48,8 @@ class GamesController < ApplicationController
   def update
     respond_to do |format|
       if @game.update(game_params)
-        format.html { redirect_to @game, notice: 'Game was successfully updated.' }
-        format.json { render :show, status: :ok, location: @game }
+        format.html { redirect_to game_path(@game.title), notice: 'Game was successfully updated.' }
+        format.json { render :show, status: :ok, location: game_path(@game.title) }
       else
         format.html { render :edit }
         format.json { render json: @game.errors, status: :unprocessable_entity }
@@ -82,7 +82,7 @@ class GamesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_game
-      @game = Game.find_by(title: params[:id])
+      @game = Game.find_by(title: params[:title]) || Game.find_by(title: params[:id]) || Game.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

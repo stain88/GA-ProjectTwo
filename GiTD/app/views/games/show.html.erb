@@ -8,7 +8,7 @@
         <h3>
           By <%= @game.user.username %>
           <% if current_user == @game.user || current_user.try(:admin?) || current_user.try(:moderator?) %>
-            <%= link_to edit_game_path(@game) do %>
+            <%= link_to edit_game_path(@game.title) do %>
               <button class="btn btn-warning">Edit</button>
             <% end %>
           <% end %>
@@ -16,7 +16,7 @@
             <button class="btn btn-info">Back</button>
           <% end %>
           <% if current_user.try(:admin?) %>
-            <%= link_to @game, method: :delete, data: {confirm: "Are you sure?"} do %>
+            <%= link_to @game.title, method: :delete, data: {confirm: "Are you sure?"} do %>
               <button class="btn btn-danger">Delete</button>
             <% end %>
           <% end %>

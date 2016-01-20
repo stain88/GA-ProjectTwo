@@ -6,7 +6,7 @@
 
       <%= render 'form' %>
 
-      <%= link_to @game do %> 
+      <%= link_to game_path(@game.title) do %> 
         <button class="btn btn-custom">Show</button>
       <% end %>
       <%= link_to games_path do %>
