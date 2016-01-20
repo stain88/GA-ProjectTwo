@@ -6,6 +6,7 @@ class Game < ActiveRecord::Base
   mount_uploaders :multifiles, GameFileUploader
 
   validates_presence_of :title
+  validates_uniqueness_of :title, :case_sensitive => false
   validates_presence_of :jam_id
 
   acts_as_commontable
