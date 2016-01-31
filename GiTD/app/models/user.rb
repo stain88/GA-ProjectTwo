@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 
   acts_as_commontator
   acts_as_voter
+  acts_as_messageable
 
   has_many :games, dependent: :destroy
   has_many :friendships, dependent: :destroy
